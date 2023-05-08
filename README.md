@@ -1,6 +1,6 @@
 # Jogo da Velha
 
-O principal objetivo desse projeto é praticar alguns conceitos de Javascript e CSS. 
+O principal objetivo desse projeto é praticar alguns conceitos de Javascript e CSS. Além disso, praticar comandos do Git.
 
 ## Quais os requisitos desse projeto?
 1. Deve ser capaz de receber o nome de dois jogadores
