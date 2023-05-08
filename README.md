@@ -1,4 +1,4 @@
-#Jogo da Velha
+# Jogo da Velha
 
 O principal objetivo desse projeto é praticar alguns conceitos de Javascript e CSS. 
 
