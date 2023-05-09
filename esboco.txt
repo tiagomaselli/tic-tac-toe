@@ -1,0 +1,106 @@
+=> Resolvi fazer algumas anotações um pouco mais detalhadas de como seria boa parte do funcionamento desse projeto antes de começar a codificar, ainda não tenho certeza se essa é uma boa prática e também não sei a melhor forma de fazer. 
+
+=> Objetivo: descobrir o quanto meu produto final vai ser alterado desde a ideia inicial e se isso vai me ajudar a ser mais produtivo na codificação.
+
+=> Aceito sugestões; e à medida que vou aprendendo técnicas melhores para isso, vou aplicando nos próximos projetos.
+
+---------------------------------------------------
+
++++ Tela inicial +++
+
+1. h1 "jogo da velha"
+2. abaixo do h1, lado esquerdo: placar oculto
+3. lado direito botão (Dark/light)
+4. dois Inputs para pegar nome dos players
+5. botão para iniciar o jogo
+
++++ Tela - jogo iniciado +++
+
+1. Mantém o h1
+2. Aparece o placar
+3. Mantém o botão (dark/light)
+4. Aparece o "tabuleiro" do jogo
+
+---------------------------------------------------
+
++++ Funcionalidades +++
+
+1 - Início:
+  1.1 - O tabuleiro do jogo começa oculto
+
+2 - Campos:
+  2.1 - input de cada player, colocar um "atributo data" com o valor "X" para um e "O" para o outro.
+  2.2 - input hidden para verificar de quem é a vez na rodada atual
+  2.3 - input hidden para verificar quem começou na rodada passada
+
+3 - Botão "Start game"
+  3.1 - Acionado, verificar se os nomes dos jogadores estão preenchidos (talvez colocar um limite de caracteres tbm pra não permitir nomes muito grandes)
+  3.2 - esconde tela inicial / mostra tabuleiro do jogo
+  3.4 - Inicia função que prepara o jogo para ser jogado (prepareGame)
+
+4 - Função "prepareGame"
+  4.1 - Mostra o nome do jogador que vai começar jogando
+  4.2 - Remove todas a classe css relativa a win
+  4.3 - Limpa todos as jogadas (setar para os valores originais, ABC)
+  4.4 - Habilita todos os campos do tabuleiro / 
+  4.5 - Adiciona em todos os campos pointer (adicionar classe)
+  4.5 - Adiciona o evento click em todos os campos do tabuleiro e a função "playerPlaying"
+
+5 - Player joga, Função "playerPlaying"
+  5.1 - Verifica se tem ganhador, função "anyoneWin" = retorna true/false
+  5.2 - Desabilita campo clicado do tabuleiro
+  5.3 - Tira pointer do campo (remover classe)
+  5.4 - Adiciona classe(css) dá cor do jogador (X ou O)
+  5.4 - Sabendo se tem vencedor ou não, fazer:
+    5.4.a Se não tiver vencedor (false)
+    - aponta o próximo jogador
+    5.4.b Se tiver vencedor (true)
+      - desabilita os campos restantes e tira o pointer
+      - mostra botão para continuar jogando
+      - mostra botão para sair do jogo
+      - acrescenta 1 no placar de quem venceu
+      - mostra o nome do vencedor
+
+6 - Função "anyoneWin"
+  6.1 Verifica se tem vencedor de acordo com a lógica (final do documento)
+  6.2 Retorna true se tiver vencedor, false se não
+
+---------------------------------------------------
+
++++ Lógica +++
+
+1=A 2=B 3=A
+4=B 5=C 6=B
+7=A 8=B 9=A
+
+comparar:
+
+diagonais:
+1 = 5 = 9
+3 = 5 = 7
+
+horizontais:
+1 = 2 = 3
+4 = 5 = 6
+7 = 8 = 9
+
+verticais:
+1 = 4 = 7
+2 = 5 = 8
+3 = 6 = 9
+
+---------------------------------------------------
+
++++ Estilo +++
+
+1. O app vai vir tema Dark como padrão
+
+2. Teremos variáveis globais para mudar de acordo com o tema, são elas:
+  2.1 --primary-color (cor principal do dark = preto)
+  2.2 --secondary-color (cor secundária do dark = branco)
+  2.3 --bg-board-color (background do tabuleiro)
+  2.4 --border-board-color
+  2.5 --p1-color
+  2.6 --p2-color
+
+Obs.: Ainda não tenho tanta familiaridade com CSS para colocar mais detalhes aqui, ainda preciso codificar o layout para ir definindo as classes que vou precisar. Só devo tomar cuidado para não criar classes desnecessariamente enquanto codifico as funcionalidades do projeto para não causar dores de cabeça depois.
