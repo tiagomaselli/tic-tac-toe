@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./index.js" defer></script>
+  <title>Jogo da Velha</title>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Jogo da Velha</h1>
+    </header>
+
+    <section>
+      <div id="scoreBoard">
+        <input type="text" name="scorePlayerOne" id="scorePlayerOne" disabled>
+        <input type="text" name="scorePlayerTwo" id="scorePlayerTwo" disabled>
+      </div>
+      <input type="button" id="changeThema" value="Tema Light" data-value="dark">
+    </section>
+
+    <section id="startGame">
+      <input type="text" name="playerOne" id="playerOne">
+      <input type="text" name="playerTwo" id="playerTwo">
+      <input type="button" value="Iniciar Jogo">
+    </section>
+
+    <section id="ticTacToeBoard">
+      <input type="text" name="gameMessages" id="gameMessages">
+
+      <input type="button" id="boardItem1" data-value="A" value="">
+      <input type="button" id="boardItem2" data-value="B" value="">
+      <input type="button" id="boardItem3" data-value="A" value="">
+      <input type="button" id="boardItem4" data-value="B" value="">
+      <input type="button" id="boardItem5" data-value="C" value="">
+      <input type="button" id="boardItem6" data-value="B" value="">
+      <input type="button" id="boardItem7" data-value="A" value="">
+      <input type="button" id="boardItem8" data-value="B" value="">
+      <input type="button" id="boardItem9" data-value="A" value="">
+
+      <input type="button" id="btnContinueGame" value="Continuar Jogando">
+      <input type="button" id="btnFinishGame" value="Finalizar Jogo">
+    </section>
+  </main>
+</body>
+</html>
