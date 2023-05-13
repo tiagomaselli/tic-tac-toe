@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #101010;
+  --secondary-color: #ffffff;
+  --support-color: #171717;
+  --bg-board-color: #444444;
+  --p1-color: #000dff;
+  --p2-color: #ff0000;
+}
+
+body {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+main {
+  margin: 0 auto;
+  max-width: 40rem;
+  height: 100%;
+  padding: 2rem;
+}
+
+header {
+  height: 5rem;
+}
+
+h1 {
+  height: 2.6rem;
+  width: 20rem;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 1.3rem;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80%;
+}
+
+#scoreBoard {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  margin-bottom: 1rem;
+}
+
+#scoreBoardInputs input {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.4rem;
+}
+
+#startGame input {
+  width: 18rem;
+  height: 3rem;
+  border-radius: 0.4rem;
+}
+
+#ticTacToeBoard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.2rem;
+}
+
+#gameMessages {
+  grid-column: 1/4;
+  width: 18rem;
+  height: 3rem;
+  border-radius: 0.4rem;
+}
+
+.boardItems {
+  width: 5.8rem;
+  height: 5rem;
+  border-radius: 0.4rem;
+}
+
+#btnEndRound {
+  grid-column: 1/4;
+}
+
+#btnEndRound input {
+  width: 8.8rem;
+  height: 3rem;
+  border-radius: 0.4rem;
+}
