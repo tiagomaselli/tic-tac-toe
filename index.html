@@ -19,34 +19,35 @@
         <span id="scoreBoardInputs">
           <input type="text" name="scorePlayerOne" id="scorePlayerOne" disabled>
           <input type="text" name="scorePlayerTwo" id="scorePlayerTwo" disabled>
+          <input type="hidden" name="whoIsFirst" id="whoIsFirst" value="playerOne">
         </span>
         <input type="button" id="changeThema" value="Tema Light" data-value="dark">
       </div>
 
       <div id="startGame">
-        <input type="text" name="playerOne" id="playerOne" placeholder="Nick do jogador 1...">
+        <input type="text" name="playerOne" id="playerOne" data-simbol="X" placeholder="Nick do jogador 1...">
         <br>
-        <input type="text" name="playerTwo" id="playerTwo" placeholder="Nick do jogador 2...">
+        <input type="text" name="playerTwo" id="playerTwo" data-simbol="O" placeholder="Nick do jogador 2...">
         <br>
         <input type="button" id="btnStarGame" value="Iniciar Jogo">
       </div>
 
       <div id="ticTacToeBoard">
-        <input type="text" name="gameMessages" id="gameMessages" disabled>
+        <input type="text" name="gameMessages" id="gameMessages" readonly>
 
-        <input type="button" id="boardItem1" class="boardItems" data-value="A" value="">
-        <input type="button" id="boardItem2" class="boardItems" data-value="B" value="">
-        <input type="button" id="boardItem3" class="boardItems" data-value="A" value="">
-        <input type="button" id="boardItem4" class="boardItems" data-value="B" value="">
-        <input type="button" id="boardItem5" class="boardItems" data-value="C" value="">
-        <input type="button" id="boardItem6" class="boardItems" data-value="B" value="">
-        <input type="button" id="boardItem7" class="boardItems" data-value="A" value="">
-        <input type="button" id="boardItem8" class="boardItems" data-value="B" value="">
-        <input type="button" id="boardItem9" class="boardItems" data-value="A" value="">
+        <input type="button" id="boardItem0" class="boardItems" data-value="A" value="">
+        <input type="button" id="boardItem1" class="boardItems" data-value="B" value="">
+        <input type="button" id="boardItem2" class="boardItems" data-value="A" value="">
+        <input type="button" id="boardItem3" class="boardItems" data-value="B" value="">
+        <input type="button" id="boardItem4" class="boardItems" data-value="C" value="">
+        <input type="button" id="boardItem5" class="boardItems" data-value="B" value="">
+        <input type="button" id="boardItem6" class="boardItems" data-value="A" value="">
+        <input type="button" id="boardItem7" class="boardItems" data-value="B" value="">
+        <input type="button" id="boardItem8" class="boardItems" data-value="A" value="">
         
         <span id="btnEndRound">
-          <input type="button" id="btnContinueGame" value="Continue">
-          <input type="button" id="btnFinishGame" value="Finalizar">
+          <input type="button" id="btnFinishGame" value="Reiniciar">
+          <input type="button" id="btnContinueGame" value="Continuar">
         </span>
       </div>
 
