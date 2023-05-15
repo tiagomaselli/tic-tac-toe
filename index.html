@@ -14,17 +14,17 @@
       <h1>JOGO DA VELHA</h1>
     </header>
 
-    <section>
+    <section class="flex-column-center">
       <div id="scoreBoard">
         <span id="scoreBoardInputs">
-          <input type="text" name="scorePlayerOne" id="scorePlayerOne" disabled>
-          <input type="text" name="scorePlayerTwo" id="scorePlayerTwo" disabled>
+          <input type="text" name="scorePlayerOne" id="scorePlayerOne" value="0" readonly>
+          <input type="text" name="scorePlayerTwo" id="scorePlayerTwo" value="0" readonly>
           <input type="hidden" name="whoIsFirst" id="whoIsFirst" value="playerOne">
         </span>
         <input type="button" id="changeThema" value="Tema Light" data-value="dark">
       </div>
 
-      <div id="startGame">
+      <div id="startGame" class="flex-column-center">
         <input type="text" name="playerOne" id="playerOne" data-simbol="X" placeholder="Nick do jogador 1...">
         <br>
         <input type="text" name="playerTwo" id="playerTwo" data-simbol="O" placeholder="Nick do jogador 2...">

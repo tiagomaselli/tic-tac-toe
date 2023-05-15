@@ -38,19 +38,29 @@ h1 {
 }
 
 section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   height: 80%;
 }
 
+/*Placar e mudar tema*/
+
 #scoreBoard {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
   width: 100%;
   padding-left: 3rem;
   padding-right: 3rem;
   margin-bottom: 1rem;
+}
+
+#scoreBoardInputs {
+  margin-left: 2.7rem;
+}
+
+#changeThema {
+  width: 5rem;
+  height: 2rem;
+  margin-right: 2.7rem;
 }
 
 #scoreBoardInputs input {
@@ -59,11 +69,15 @@ section {
   border-radius: 0.4rem;
 }
 
+/*Tela para iniciar o jogo*/
+
 #startGame input {
   width: 18rem;
   height: 3rem;
   border-radius: 0.4rem;
 }
+
+/*Tabuleiro do jogo*/
 
 #ticTacToeBoard {
   display: grid;
@@ -92,4 +106,12 @@ section {
   width: 8.8rem;
   height: 3rem;
   border-radius: 0.4rem;
+}
+
+/*Classes gerais*/
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
 }

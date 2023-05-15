@@ -1,5 +1,6 @@
 //Blocos
 const ticTacToeBoard = document.getElementById("ticTacToeBoard")
+const scoreBoardInputs = document.getElementById("scoreBoardInputs")
 const startGame = document.getElementById("startGame")
 
 //Botões
@@ -54,6 +55,7 @@ btnStarGame.addEventListener("click", () => {
     alert("Preencha os campos com os nicks dos jogadores! ")
   } else {
     ticTacToeBoard.style.display = "grid"
+    scoreBoardInputs.style.visibility = "visible"
     startGame.style.display = "none"
     prepareGame()
   }
@@ -65,6 +67,7 @@ btnFinishGame.addEventListener("click", () => location.reload())
 //Executado após DOM carregar
 document.addEventListener('DOMContentLoaded', () => {
   ticTacToeBoard.style.display = "none"
+  scoreBoardInputs.style.visibility = "hidden"
 })
 
 
