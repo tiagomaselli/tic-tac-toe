@@ -4,7 +4,7 @@ const scoreBoardInputs = document.getElementById("scoreBoardInputs")
 const startGame = document.getElementById("startGame")
 
 //Botões
-const btnStarGame = document.getElementById("btnStarGame")
+const btnStartGame = document.getElementById("btnStartGame")
 const btnFinishGame = document.getElementById("btnFinishGame")
 const btnContinueGame = document.getElementById("btnContinueGame")
 
@@ -257,7 +257,7 @@ function prepareGame() {
   addAllClicksFromTheBoard()
 }
 
-btnStarGame.addEventListener("click", () => {
+btnStartGame.addEventListener("click", () => {
   if (playerOne.value === "" || playerTwo.value === "") {
     alert("Preencha os campos com os nicks dos jogadores! ")
   } else {
