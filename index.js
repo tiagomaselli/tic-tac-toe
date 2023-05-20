@@ -53,13 +53,22 @@ function winnerCommands(firstItem, secondItem, thirdItem) {
   if (whoIsNext.value === "playerOne") {
     gameMessages.value = `${playerTwo.value} venceu essa rodada!`
     scorePlayerTwo.value = parseInt(scorePlayerTwo.value) + 1
+    firstItem.classList.remove("p2-inputs")
+    firstItem.classList.add("p2-win-inputs")
+    secondItem.classList.remove("p2-inputs")
+    secondItem.classList.add("p2-win-inputs")
+    thirdItem.classList.remove("p2-inputs")
+    thirdItem.classList.add("p2-win-inputs")
   } else {
     gameMessages.value = `${playerOne.value} venceu essa rodada!`
     scorePlayerOne.value = parseInt(scorePlayerOne.value) + 1
+    firstItem.classList.remove("p1-inputs")
+    firstItem.classList.add("p1-win-inputs")
+    secondItem.classList.remove("p1-inputs")
+    secondItem.classList.add("p1-win-inputs")
+    thirdItem.classList.remove("p1-inputs")
+    thirdItem.classList.add("p1-win-inputs")
   }
-
-  //Implementar o CSS para mudar as cores
-
 }
 
 //Verifica se naquela linha os simbolos estão iguais
@@ -135,6 +144,11 @@ function howMuchPointers() {
 
 function showDrawMsg() {
   gameMessages.value = `Deu empate!`
+  gameMessages.classList.forEach((className) => {
+    if (className.endsWith("-inputs"))
+      gameMessages.classList.remove(className)
+  })
+  gameMessages.classList.add("empate")
 
   btnContinueGame.style.visibility = "visible"
   btnContinueGame.addEventListener("click", continueGame)
@@ -145,6 +159,18 @@ function showMsgNextPlayer() {
   const idPlayer = whoIsNext.value
   const nickPlayer = document.getElementById(idPlayer).value
   gameMessages.value = `Jogue ${nickPlayer}!`
+
+  if (idPlayer === "playerOne") {
+    gameMessages.classList.remove("p2-inputs")
+    gameMessages.classList.add("p1-inputs")
+    if (gameMessages.classList.contains("empate"))
+      gameMessages.classList.remove("empate")
+  } else {
+    gameMessages.classList.remove("p1-inputs")
+    gameMessages.classList.add("p2-inputs")
+    if (gameMessages.classList.contains("empate"))
+    gameMessages.classList.remove("empate")
+  }
 }
 
 function writeOnTheBoard(currentBoardItem) {
@@ -159,8 +185,12 @@ function writeOnTheBoard(currentBoardItem) {
   //Alterna o jogador
   if (whoIsNext.value === "playerOne") {
     whoIsNext.value = "playerTwo"
+    currentBoardItem.classList.add("p1-inputs")
+    currentBoardItem.classList.remove("p2-inputs")
   } else {
     whoIsNext.value = "playerOne"
+    currentBoardItem.classList.add("p2-inputs")
+    currentBoardItem.classList.remove("p1-inputs")
   }
 }
 
@@ -180,6 +210,17 @@ function playerPlaying(ev) {
     //Lógica para verificar se há empate no jogo
     howMuchPointers() > 0 ? showMsgNextPlayer() : showDrawMsg()
   }
+}
+
+function removeClassFromTheBoard() {
+  for (let i = 0; i <= 8; i++) {
+    let currentItem = document.getElementById("boardItem" + i)
+    currentItem.classList.forEach((className) => {
+      //Se a classe terminar com "-input", remove
+      if (className.endsWith("-inputs") || className === "empate") 
+        currentItem.classList.remove(className)    
+    })
+  }  
 }
 
 function removeAllPointers() {
@@ -211,7 +252,8 @@ function addAllClicksFromTheBoard() {
 }
 
 function resetBoard() {
-  //Remove todas a classe css relativa a win
+  //Remove todas a classe css relativa as jogadas e vitória
+  removeClassFromTheBoard()
 
   //Habilita todos os campos do tabuleiro
   addAllClicksFromTheBoard()

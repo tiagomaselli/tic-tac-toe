@@ -11,8 +11,8 @@
   --secondary-color: #ffffff;
   --support-color: #171717;
   --bg-board-color: #444444;
-  --p1-color: #000dff;
-  --p2-color: #ff0000;
+  --p1-color: #5d65ff;
+  --p2-color: #ff5353;
 }
 
 body {
@@ -103,6 +103,20 @@ input {
   padding-left: 0.8rem;
 }
 
+/*Encontrei essa solução na internet mas ainda preciso entender melhor*/
+#playerOne:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px var(--p1-color) inset;
+  -webkit-text-fill-color: var(--primary-color) !important;
+}
+
+#playerTwo:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px var(--p2-color) inset;
+  -webkit-text-fill-color: var(--primary-color) !important;
+}
+
+::placeholder {
+  color: #525252
+}
 
 #btnStartGame {
   font-size: 1.4rem;
@@ -161,3 +175,26 @@ input {
 .pointer {
   cursor: pointer;
 }
+
+.p1-inputs {
+  background-color: var(--p1-color);
+}
+
+.p1-win-inputs {
+  color: var(--p1-color);
+  background-color: var(--secondary-color);
+}
+
+.p2-inputs {
+  background-color: var(--p2-color);
+}
+
+.p2-win-inputs {
+  color: var(--p2-color);
+  background-color: var(--secondary-color);
+}
+
+.empate {
+  background-color: #f35100;
+}
+
