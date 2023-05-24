@@ -2,9 +2,11 @@
 const ticTacToeBoard = document.getElementById("ticTacToeBoard")
 const scoreBoardInputs = document.getElementById("scoreBoardInputs")
 const startGame = document.getElementById("startGame")
+const root = document.querySelector(":root")
 
 //Botões
 const btnStartGame = document.getElementById("btnStartGame")
+const changeThema = document.getElementById("changeThema")
 const btnFinishGame = document.getElementById("btnFinishGame")
 const btnContinueGame = document.getElementById("btnContinueGame")
 
@@ -306,6 +308,24 @@ btnStartGame.addEventListener("click", () => {
     alert("Preencha os campos com os nicks dos jogadores! ")
   } else {
     prepareGame()
+  }
+})
+
+changeThema.addEventListener("click", () => {
+  if (changeThema.dataset.value === "light") {
+    root.style.setProperty("--primary-color", "#000")
+    root.style.setProperty("--font-color", "#f0f0f0")
+    root.style.setProperty("--secondary-color", "#3f3f3f")
+    root.style.setProperty("--p1-color", "#27df12")
+    root.style.setProperty("--p2-color", "#aa00ff")
+    changeThema.dataset.value = "dark"
+  } else {
+    root.style.setProperty("--primary-color", "#f0f0f0")
+    root.style.setProperty("--font-color", "#3f3f3f")
+    root.style.setProperty("--secondary-color", "#c1c1c1")
+    root.style.setProperty("--p1-color", "#777efa")
+    root.style.setProperty("--p2-color", "#ff6a6a")
+    changeThema.dataset.value = "light"
   }
 })
 
