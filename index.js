@@ -53,21 +53,21 @@ function winnerCommands(firstItem, secondItem, thirdItem) {
   if (whoIsNext.value === "playerOne") {
     gameMessages.value = `${playerTwo.value} venceu essa rodada!`
     scorePlayerTwo.value = parseInt(scorePlayerTwo.value) + 1
-    firstItem.classList.remove("p2-inputs")
-    firstItem.classList.add("p2-win-inputs")
-    secondItem.classList.remove("p2-inputs")
-    secondItem.classList.add("p2-win-inputs")
-    thirdItem.classList.remove("p2-inputs")
-    thirdItem.classList.add("p2-win-inputs")
+    firstItem.classList.remove("p2-plays")
+    firstItem.classList.add("p2-win-plays")
+    secondItem.classList.remove("p2-plays")
+    secondItem.classList.add("p2-win-plays")
+    thirdItem.classList.remove("p2-plays")
+    thirdItem.classList.add("p2-win-plays")
   } else {
     gameMessages.value = `${playerOne.value} venceu essa rodada!`
     scorePlayerOne.value = parseInt(scorePlayerOne.value) + 1
-    firstItem.classList.remove("p1-inputs")
-    firstItem.classList.add("p1-win-inputs")
-    secondItem.classList.remove("p1-inputs")
-    secondItem.classList.add("p1-win-inputs")
-    thirdItem.classList.remove("p1-inputs")
-    thirdItem.classList.add("p1-win-inputs")
+    firstItem.classList.remove("p1-plays")
+    firstItem.classList.add("p1-win-plays")
+    secondItem.classList.remove("p1-plays")
+    secondItem.classList.add("p1-win-plays")
+    thirdItem.classList.remove("p1-plays")
+    thirdItem.classList.add("p1-win-plays")
   }
 }
 
@@ -145,7 +145,7 @@ function howMuchPointers() {
 function showDrawMsg() {
   gameMessages.value = `Deu empate!`
   gameMessages.classList.forEach((className) => {
-    if (className.endsWith("-inputs"))
+    if (className.endsWith("-plays"))
       gameMessages.classList.remove(className)
   })
   gameMessages.classList.add("empate")
@@ -180,17 +180,15 @@ function writeOnTheBoard(currentBoardItem) {
   currentBoardItem.value = playerSimbol  
   currentBoardItem.dataset.value = playerSimbol 
 
-  //Adiciona classe(css) dá cor do jogador (X ou O) p/ msg e para a marcação
-  
   //Alterna o jogador
   if (whoIsNext.value === "playerOne") {
     whoIsNext.value = "playerTwo"
-    currentBoardItem.classList.add("p1-inputs")
-    currentBoardItem.classList.remove("p2-inputs")
+    currentBoardItem.classList.add("p1-plays")
+    currentBoardItem.classList.remove("p2-plays")
   } else {
     whoIsNext.value = "playerOne"
-    currentBoardItem.classList.add("p2-inputs")
-    currentBoardItem.classList.remove("p1-inputs")
+    currentBoardItem.classList.add("p2-plays")
+    currentBoardItem.classList.remove("p1-plays")
   }
 }
 
@@ -217,7 +215,7 @@ function removeClassFromTheBoard() {
     let currentItem = document.getElementById("boardItem" + i)
     currentItem.classList.forEach((className) => {
       //Se a classe terminar com "-input", remove
-      if (className.endsWith("-inputs") || className === "empate") 
+      if (className.endsWith("-plays") || className === "empate") 
         currentItem.classList.remove(className)    
     })
   }  
@@ -290,10 +288,14 @@ function screenChanges() {
 }
 
 function prepareGame() {
-  showMsgNextPlayer()
+  //Condição 1 = se não for a primeira vez...
+  const ifNotFirstTime = scorePlayerOne.value !== "0" || scorePlayerTwo.value !== "0"
+  //Condição 2 = se foi empate
+  const ifDraw = gameMessages.classList.contains("empate")
 
-  //Se não for a primeira vez...
-  scorePlayerOne.value !== "0" || scorePlayerTwo.value !== "0" ? resetBoard() : screenChanges()
+  ifNotFirstTime || ifDraw ? resetBoard() : screenChanges()
+
+  showMsgNextPlayer()
 
   //Adiciona o evento click em todos os campos do tabuleiro e a função "playerPlaying"
   addAllClicksFromTheBoard()

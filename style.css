@@ -7,17 +7,16 @@
 }
 
 :root {
-  --primary-color: #101010;
-  --secondary-color: #ffffff;
-  --support-color: #171717;
-  --bg-board-color: #444444;
-  --p1-color: #5d65ff;
-  --p2-color: #ff5353;
+  --primary-color: #f0f0f0;
+  --font-color: #3f3f3f;
+  --secondary-color: #c1c1c1;
+  --p1-color: #777efa;
+  --p2-color: #ff6a6a;
 }
 
 body {
   background-color: var(--primary-color);
-  color: var(--secondary-color);
+  color: var(--font-color);
 }
 
 main {
@@ -49,7 +48,6 @@ section {
 
 input {
   font-family: Kanit, 'Times New Roman', serif;
-  font-weight: 200;
 }
 
 /*Placar e mudar tema*/
@@ -71,7 +69,7 @@ input {
 #scoreBoardInputs input {
   width: 3rem;
   height: 3rem;
-  border: 0;
+  border: 2px solid var(--secondary-color);
   border-radius: 0.4rem;
 
   text-align: center;
@@ -80,13 +78,13 @@ input {
 }
 
 #changeThema {
-  width: 5rem;
+  width: 6rem;
   height: 2rem;
   margin-right: 2.5rem;
-  border: 0;
+  border: 2px solid var(--secondary-color);
   border-radius: 0.4rem;
   font-family: Kanit, 'Times New Roman', serif;
-  font-weight: 100;
+  font-weight: 200;
 }
 
 /*Tela para iniciar o jogo*/
@@ -97,25 +95,30 @@ input {
   border: 0;
   border-radius: 0.4rem;
   font-size: 1.4rem;
+  font-weight: 600;
 }
 
 #startGame input[type="text"] {
   padding-left: 0.8rem;
+  border: 2px solid var(--secondary-color);
 }
 
 /*Encontrei essa solução na internet mas ainda preciso entender melhor*/
 #playerOne:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 30px var(--p1-color) inset;
-  -webkit-text-fill-color: var(--primary-color) !important;
+  -webkit-box-shadow: 0 0 0 30px var(--primary-color) inset;
+  -webkit-text-fill-color: var(--p1-color) !important;
+  font-weight: 600;
 }
 
 #playerTwo:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 30px var(--p2-color) inset;
-  -webkit-text-fill-color: var(--primary-color) !important;
+  -webkit-box-shadow: 0 0 0 30px var(--primary-color) inset;
+  -webkit-text-fill-color: var(--p2-color) !important;
+  font-weight: 600;
 }
 
 ::placeholder {
-  color: #525252
+  color: #a0a0a0;
+  font-weight: 200;
 }
 
 #btnStartGame {
@@ -134,11 +137,12 @@ input {
   grid-column: 1/4;
   width: 25rem;
   height: 3rem;
+  border: 2px solid var(--secondary-color);
   border-radius: 0.4rem;
-  border: 0;
 
   padding-left: 0.8rem;
   font-size: 1.4rem;
+  font-weight: 600;
 }
 
 .boardItems {
@@ -146,6 +150,7 @@ input {
   height: 5rem;
   border: 0;
   border-radius: 0.4rem;
+  background-color: var(--secondary-color);
 
   font-weight: 600;
   font-size: 2.8rem;
@@ -162,6 +167,7 @@ input {
   border-radius: 0.4rem;
 
   font-size: 1.4rem;
+
 }
 
 /*Classes gerais*/
@@ -176,25 +182,41 @@ input {
   cursor: pointer;
 }
 
-.p1-inputs {
-  background-color: var(--p1-color);
+.btn {
+  background-color: var(--secondary-color);
+  color: var(--font-color);
+  font-weight: 600;
 }
 
-.p1-win-inputs {
+.p1-inputs {
+  color: var(--p1-color);
+  background-color: var(--primary-color);
+}
+
+.p2-inputs {
+  color: var(--p2-color);
+  background-color: var(--primary-color);
+}
+
+.p1-plays {
   color: var(--p1-color);
   background-color: var(--secondary-color);
 }
 
-.p2-inputs {
-  background-color: var(--p2-color);
-}
-
-.p2-win-inputs {
+.p2-plays {
   color: var(--p2-color);
   background-color: var(--secondary-color);
 }
 
+.p1-win-plays {
+  background-color: var(--p1-color);
+}
+
+.p2-win-plays {
+  background-color: var(--p2-color);
+}
+
 .empate {
-  background-color: #f35100;
+  color: var(--font-color);
 }
 

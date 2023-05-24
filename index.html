@@ -17,12 +17,12 @@
     <section class="flex-column-center">
       <div id="scoreBoard">
         <span id="scoreBoardInputs">
-          <input type="text" name="scorePlayerOne" id="scorePlayerOne" class="p1-inputs" value="0" readonly>
-          <input type="text" name="scorePlayerTwo" id="scorePlayerTwo" class="p2-inputs" value="0" readonly>
+          <input type="text" name="scorePlayerOne" id="scorePlayerOne" class="p1-inputs" value="0" disabled>
+          <input type="text" name="scorePlayerTwo" id="scorePlayerTwo" class="p2-inputs" value="0" disabled>
           <input type="hidden" name="whoIsFirst" id="whoIsFirst" value="playerOne">
           <input type="hidden" name="whoIsNext" id="whoIsNext" value="playerOne">
         </span>
-        <input type="button" id="changeThema" value="Tema Light" data-value="dark">
+        <input type="button" id="changeThema" value="Mudar Tema" data-value="light">
       </div>
 
       <div id="startGame" class="flex-column-center">
@@ -30,11 +30,11 @@
         <br>
         <input type="text" name="playerTwo" id="playerTwo" class="p2-inputs" data-simbol="O" placeholder="Nick do jogador 2...">
         <br>
-        <input type="button" id="btnStartGame" value="Iniciar Jogo">
+        <input type="button" id="btnStartGame" class="btn pointer" value="Iniciar Jogo">
       </div>
 
       <div id="ticTacToeBoard">
-        <input type="text" name="gameMessages" id="gameMessages" class="p1-inputs" readonly>
+        <input type="text" name="gameMessages" id="gameMessages" class="p1-inputs" disabled>
 
         <input type="button" id="boardItem0" class="boardItems pointer" data-value="A" value="">
         <input type="button" id="boardItem1" class="boardItems pointer" data-value="B" value="">
@@ -47,8 +47,8 @@
         <input type="button" id="boardItem8" class="boardItems pointer" data-value="A" value="">
         
         <span id="btnEndRound">
-          <input type="button" id="btnFinishGame" value="Reiniciar">
-          <input type="button" id="btnContinueGame" value="Continuar">
+          <input type="button" id="btnFinishGame" class="btn pointer" value="Reiniciar">
+          <input type="button" id="btnContinueGame" class="btn pointer" value="Continuar">
         </span>
       </div>
 
