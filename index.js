@@ -330,7 +330,12 @@ changeThema.addEventListener("click", () => {
 })
 
 //Recarrega o jogo para novos jogadores
-btnFinishGame.addEventListener("click", () => location.reload())
+btnFinishGame.addEventListener("click", () => {
+  const confirmMessage = `Tem certeza que deseja voltar para tela inicial?\n\nSe confirmar, Todo o jogo entre ${playerOne.value} e ${playerTwo.value} serão perdidos.`
+  
+  if (confirm(confirmMessage)) 
+    location.reload()
+})
 
 //Executado após DOM carregar
 document.addEventListener('DOMContentLoaded', () => {
