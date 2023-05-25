@@ -25,3 +25,14 @@ O principal objetivo desse projeto é praticar alguns conceitos de Javascript, C
 ### HTML:
 1. Uso do Atributo Data
 
+## Layout finalizado
+<img src="assets/page-1-light.png" alt="Página para definir jogadores - light">
+<img src="assets/page-1-dark.png" alt="Página para definir jogadores - dark">
+<img src="assets/page-2-light.png" alt="Página de jogo - light">
+<img src="assets/page-2-dark.png" alt="Página de jogo - dark">
+<img src="assets/page-win-light.png" alt="Exemplo de vitória de um jogador - light">
+<img src="assets/page-win-dark.png" alt="Exemplo de vitória de um jogador - dark">
+
+
+
+
